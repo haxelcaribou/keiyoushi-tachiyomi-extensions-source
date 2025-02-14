@@ -14,7 +14,7 @@ import rx.Observable
 
 class PerryBibleFellowship : ParsedHttpSource() {
     override val name = "Perry Bible Fellowship"
-    override val baseUrl = "https://pbfcomics.com/"
+    override val baseUrl = "https://pbfcomics.com"
     override val lang = "en"
     override val supportsLatest = false
 
@@ -49,14 +49,14 @@ class PerryBibleFellowship : ParsedHttpSource() {
     override fun chapterFromElement(element: Element): SChapter {
         return SChapter.create().apply {
             chapter_number = element.attr("id").toFloat()
-            setUrlWithoutDomain(element.attr("href").substring(22))
+            setUrlWithoutDomain(element.attr("href").substring(21))
             name = element.select(".thumbnail_post_title").text()
             // date_upload // Get from URL
         }
     }
 
     override fun pageListParse(document: Document): List<Page> =
-        document.select("#comic img").mapIndexed { i, element -> Page(i, "", element.attr("src")) }
+        document.select("#comic noscript img").mapIndexed { i, element -> Page(i, "", baseUrl + element.attr("src").substring(21)) }
 
     // <editor-fold desc="Not Used">
     override fun imageUrlParse(document: Document): String = throw UnsupportedOperationException()
