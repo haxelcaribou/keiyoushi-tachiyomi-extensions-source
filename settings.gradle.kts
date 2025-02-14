@@ -3,7 +3,6 @@
  */
 //loadAllIndividualExtensions()
 loadIndividualExtension("en", "egscomics")
-loadIndividualExtension("en", "gunnerkriggcourt")
 
 /**
  * ===================================== COMMON CONFIGURATION ======================================
