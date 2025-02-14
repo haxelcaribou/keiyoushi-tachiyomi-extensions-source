@@ -1,8 +1,9 @@
 /**
  * Add or remove modules to load as needed for local development here.
  */
-loadAllIndividualExtensions()
-// loadIndividualExtension("all", "mangadex")
+//loadAllIndividualExtensions()
+loadIndividualExtension("en", "egscomics")
+loadIndividualExtension("en", "gunnerkriggcourt")
 
 /**
  * ===================================== COMMON CONFIGURATION ======================================
