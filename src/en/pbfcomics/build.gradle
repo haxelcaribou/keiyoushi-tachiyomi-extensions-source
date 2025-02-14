@@ -1,0 +1,7 @@
+ext {
+    extName = 'Perry Bible Fellowship'
+    extClass = '.PerryBibleFellowship'
+    extVersionCode = 1
+}
+
+apply from: "$rootDir/common.gradle"
